@@ -1,0 +1,198 @@
+/* Dark Theme & Animated Signup UI */
+:root {
+  --bg-color: #121212;
+  --card-bg: #1e1e1e;
+  --primary-color: #bb86fc;
+  --primary-hover: #a065d8;
+  --text-light: #e0e0e0;
+  --error-color: #cf6679;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  background: var(--bg-color);
+  color: var(--text-light);
+  overflow: auto; /* Changed from hidden to auto to allow scrolling */
+}
+
+/* Signup Container */
+.signup-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  background: linear-gradient(135deg, #121212, #1e1e1e, #121212);
+  background-size: 400% 400%;
+  animation: gradientShift 12s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Signup Box with New Animation */
+.signup-box {
+  background: var(--card-bg);
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 440px;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(187, 134, 252, 0.1);
+}
+
+/* Remove hover effect for box */
+.signup-box:hover {
+  animation: none;
+}
+
+/* Remove glowing border effect */
+.signup-box::before {
+  content: none;
+}
+
+
+
+/* Form Elements */
+.signup-title {
+  font-size: 2.2rem;
+  margin-bottom: 1.5rem;
+  color: var(--primary-color);
+  position: relative;
+  z-index: 1;
+  animation: none;
+}
+
+.signup-input-group {
+  margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 1;
+  animation: none;
+}
+
+.signup-input-group label {
+  display: block;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  color: rgba(224, 224, 224, 0.9);
+}
+
+.signup-input-group input {
+  width: 100%;
+  padding: 0.9rem;
+  border: 1px solid #333;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-light);
+  transition: all 0.3s ease;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.signup-input-group input:focus {
+  border-color: var(--primary-color);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(187, 134, 252, 0.2);
+}
+
+.error-text {
+  color: var(--error-color);
+  font-size: 0.8rem;
+  margin-top: 0.3rem;
+  position: absolute;
+  bottom: -18px;
+  left: 0;
+}
+
+/* Button Styles */
+.signup-button {
+  width: 100%;
+  padding: 0.9rem;
+  background: var(--primary-color);
+  color: var(--bg-color);
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+  animation: none;
+}
+
+.signup-button:hover {
+  background: var(--primary-hover);
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 5px 15px rgba(187, 134, 252, 0.3);
+}
+
+/* Link Styles */
+.signup-link-text {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+  animation: none;
+}
+
+.signup-link {
+  color: var(--primary-color);
+  font-weight: 600;
+  text-decoration: none;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.signup-link:hover {
+  color: var(--primary-hover);
+  text-shadow: 0 0 15px rgba(187, 134, 252, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .signup-container {
+    padding: 15px;
+    align-items: flex-start;
+  }
+  
+  .signup-box {
+    padding: 1.5rem;
+    margin-top: 2rem;
+  }
+  
+  .signup-title {
+    font-size: 2rem;
+  }
+  
+  .signup-input-group input {
+    padding: 0.8rem;
+  }
+  
+  .signup-button {
+    padding: 0.8rem;
+  }
+}
+
+@media (max-height: 600px) {
+  .signup-container {
+    align-items: flex-start;
+    padding-top: 2rem;
+  }
+}

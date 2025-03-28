@@ -1,0 +1,221 @@
+/* Extraordinary Dashboard CSS */
+.dashboard-container {
+  width: 82%;
+  margin-left: 17%;
+  margin-top: -1%;
+  height: 100vh;
+  padding: 1.5rem;
+  background: rgba(18, 18, 18, 0.95);
+  backdrop-filter: blur(10px);
+  color: #fff;
+  overflow-y: scroll;
+  scrollbar-width: none; /* Firefox */
+}
+
+.dashboard-container::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+.dashboard-header {
+  position: relative;
+  margin-bottom: 3rem;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  background: linear-gradient(145deg, #D53588, rgba(106, 27, 154, 0.2));
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.header-glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 50% 0%, #55197A, transparent 60%);
+  pointer-events: none;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.neon-card {
+  background: rgba(45, 45, 45, 0.6);
+  border-radius: 1.5rem;
+  padding: 2rem;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(103, 229, 29, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.neon-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(103, 229, 29, 0.2);
+}
+
+.neon-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(103, 229, 29, 0.1), transparent);
+  transition: 0.5s;
+}
+
+.neon-card:hover::before {
+  left: 100%;
+}
+
+.stat-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.gradient-purple {
+  background: linear-gradient(135deg, #6a1b9a, #9c27b0);
+}
+
+.gradient-green {
+  background: linear-gradient(135deg, #67e51d, #4caf50);
+}
+
+.gradient-blue {
+  background: linear-gradient(135deg, #2196f3, #03a9f4);
+}
+
+.stat-content h3 {
+  color: #fff;
+  margin-bottom: 0.8rem;
+  font-size: 1.2rem;
+}
+
+.stat-content p {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  background: linear-gradient(45deg, #67e51d, #fff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.stat-trend {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #67e51d;
+  font-weight: 500;
+}
+
+.glass-card {
+  background: rgba(45, 45, 45, 0.4);
+  border-radius: 1.5rem;
+  padding: 2rem;
+  margin-bottom: 3rem;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(103, 229, 29, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.chart-wrapper {
+  height: 500px;
+  margin-top: 2rem;
+  position: relative;
+}
+
+.users-table {
+  margin-top: 2rem;
+}
+
+.users-table table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 0.8rem;
+}
+
+.users-table th {
+  background: rgba(103, 229, 29, 0.1);
+  padding: 1.2rem;
+  font-weight: 600;
+}
+
+.users-table td {
+  padding: 1.2rem;
+  padding-left: 4rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-bottom: 2px solid rgba(103, 229, 29, 0.1);
+}
+
+.status-indicator {
+  display: inline-block;
+  padding: 0.3rem 0.8rem;
+  border-radius: 1rem;
+  font-size: 0.9rem;
+}
+
+.status-indicator.active {
+  background: rgba(103, 229, 29, 0.2);
+  color: #67e51d;
+}
+
+.status-indicator.inactive {
+  background: rgba(255, 64, 129, 0.2);
+  color: #ff4081;
+}
+
+.delete-btn {
+  background: rgba(255, 64, 129, 0.2);
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 0.8rem;
+  color: #ff4081;
+  transition: all 0.3s ease;
+}
+
+.delete-btn:hover {
+  background: rgba(255, 64, 129, 0.3);
+  transform: scale(1.05);
+}
+
+.loading-pulse {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 2rem;
+}
+
+.pulse-dot {
+  width: 12px;
+  height: 12px;
+  background: #67e51d;
+  border-radius: 50%;
+  animation: pulse 1.2s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.3); }
+}
+
+@media (max-width: 768px) {
+  .dashboard-container {
+    width: 100%;
+    margin-left: 0;
+    padding: 1rem;
+  }
+  
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+}

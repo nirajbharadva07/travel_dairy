@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+:root {
+  --accent-purple: #6a1b9a;
+  --accent-pink: #ff4081; /* Chamkila pink underline color */
+  --text-light: #ffffff;
+  --hover-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 15%;
+  background: linear-gradient(135deg, #121212, var(--accent-purple));
+  color: var(--text-light);
+  border-right: 1px solid #333;
+  padding: 1.25rem;
+  box-sizing: border-box;
+  overflow-y: auto;
+  font-family: 'Poppins', sans-serif;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.title1 {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 1.3rem;
+  margin-left: -5.9rem;
+  animation: float 6s ease-in-out infinite;
+}
+
+.title1-text, .author-text {
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  background: linear-gradient(135deg, var(--accent-purple), var(--accent-pink));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: var(--accent-pink);
+  text-shadow: 
+      0 0 2px rgba(172, 144, 154, 0.8),
+      0 0 2px rgba(188, 142, 157, 0.6);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.title1-text {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.author-text {
+  transform: translateY(20px);
+  opacity: 0;
+}
+
+.title1:hover .title1-text {
+  transform: translateY(-20px);
+  opacity: 0;
+}
+
+.title1:hover .author-text {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 2rem;
+}
+
+.sidebar li {
+  padding: 0.75rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  transition: var(--hover-transition);
+  border-radius: 0.5rem;
+  white-space: nowrap;
+}
+
+/* Remove background hover effect and add custom color */
+.sidebar li:hover {
+  background-color: #440d66;
+  box-shadow: 0 8px 20px rgba(42, 157, 143, 0.35);
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+}
+
+/* Underline effect for active links */
+.sidebar a.active li::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: var(--accent-pink);
+  border-radius: 3px;
+  animation: underlineAppear 0.3s ease forwards;
+  box-shadow: 0 8px 20px rgba(42, 157, 143, 0.35);
+}
+
+.logout-btn {
+  margin-top: 22rem;
+}
+
+@keyframes underlineAppear {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+.footer {
+  margin-top: auto;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 25%;
+  }
+  .sidebar li {
+    font-size: 1rem;
+  }
+  .title1-text, .author-text {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+}

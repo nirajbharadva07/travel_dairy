@@ -1,0 +1,160 @@
+:root {
+  --bg-dark: #1a1a1a;
+  --accent-purple: #6a1b9a;
+  --accent-pink: #ff4081;
+  --text-light: #ffffff;
+  --card-bg: #2d2d2d;
+  --hover-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.profile-container1 {
+  max-width: 1000px;
+  margin-left: 23%;
+  padding: 0;
+  border-radius: 10px;
+  background: var(--bg-dark);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  animation: slideIn 0.6s ease-out;
+  box-sizing: border-box;
+}
+
+.page-content::-webkit-scrollbar {
+  display: none;
+}
+
+/* Profile Header */
+.profile-header1 {
+  text-align: center;
+  margin-bottom: 20px;
+  padding: 15px;
+  background: linear-gradient(135deg, var(--accent-purple), var(--accent-pink));
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+}
+
+.profile-header1::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1));
+}
+
+.username1 {
+  font-size: 26px;
+  color: var(--text-light);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Travel History Section */
+.travel-history1 {
+  padding: 15px;
+  background: var(--card-bg);
+  border-radius: 8px;
+}
+
+.travel-history1 h3 {
+  font-size: 22px;
+  color: var(--accent-pink);
+  border-bottom: 2px solid var(--accent-purple);
+  padding-bottom: 5px;
+}
+
+/* Travel List */
+.travel-list1 {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 1%;
+}
+
+/* Travel Card */
+.travel-card1 {
+  display: flex;
+  align-items: flex-start;  /* CHANGED from center to flex-start */
+  gap: 15px;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  transition: var(--hover-transition);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.travel-card1:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(106, 27, 154, 0.3);
+}
+
+/* Image Container */
+.image-container1 {
+  flex-shrink: 0; /* PREVENT IMAGE FROM SHRINKING */
+}
+
+.image-container1 img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.image-container1:hover img {
+  transform: scale(1.05);
+}
+
+/* Travel Details */
+.travel-details1 {
+  flex: 1;                     /* TAKE REMAINING SPACE */
+  overflow-wrap: break-word;   /* ALLOW LONG TEXT TO WRAP */
+  word-wrap: break-word;       /* Fallback for older browsers */
+  line-height: 1.4;            /* Slightly more spacing for readability */
+}
+
+.travel-details1 h3 {
+  font-size: 18px;
+  color: var(--accent-pink);
+  margin: 0;
+}
+
+.travel-details1 p {
+  font-size: 14px;
+  color: var(--text-light);
+  position: relative;
+  padding-left: 1.5rem;
+  margin: 5px 0;
+}
+
+.travel-details1 p::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  background: var(--accent-pink);
+  border-radius: 50%;
+}
+
+/* Slide-In Animation */
+@keyframes slideIn {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .profile-container1 {
+    margin: 10px;
+    padding: 15px;
+  }
+}
