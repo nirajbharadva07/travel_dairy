@@ -8,7 +8,7 @@ import "../../Css/dashboard.css";
 
 Chart.register(CategoryScale);
 
-const ADMIN_ID = "67e51d0762a68dfde3089dbb";
+const ADMIN_ID = "67e3e5a0b8f2664a0b1de15c";
 
 export const Dashboard = ({ setActiveRoute }) => {
   const [users, setUsers] = useState([]);
