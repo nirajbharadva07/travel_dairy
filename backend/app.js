@@ -10,7 +10,7 @@ const app = express();
 // You can add more origins as needed.
 const allowedOrigins = [
   process.env.FRONTEND_URL,  // For example: "https://travel-dairy-mern-stack-project-by-niraj.onrender.com"
-  "http://localhost:5173"    // Local development
+  "https://travel-dairy-niraj.onrender.com"    // Local development
 ];
 
 app.use(cors({
