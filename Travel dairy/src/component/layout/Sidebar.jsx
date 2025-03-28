@@ -4,7 +4,7 @@ import { Database, History, ListCollapse, LogOutIcon, UserPen } from "lucide-rea
 import { NavLink, useNavigate } from "react-router-dom";
 
 export const Sidebar = () => {
-  const allowedId = "67e51d0762a68dfde3089dbb"; // Allowed User ID
+  const allowedId = "67e3e5a0b8f2664a0b1de15c"; // Allowed User ID
   const storedUser = localStorage.getItem("user"); // Get the stored user data
   const navigate = useNavigate();
 
