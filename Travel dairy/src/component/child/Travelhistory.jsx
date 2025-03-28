@@ -95,11 +95,11 @@ export const Travelhistory = () => {
                 <div
                   className="image-container"
                   onClick={() =>
-                    setSelectedImage(`http://localhost:3000/${trip.photos}`)
+                    setSelectedImage(`https://travel-dairy.onrender.com/${trip.photos}`)
                   }
                 >
                   <img
-                    src={`http://localhost:3000/${trip.photos}`}
+                    src={`https://travel-dairy.onrender.com/${trip.photos}`}
                     alt={trip.destination}
                   />
                 </div>
