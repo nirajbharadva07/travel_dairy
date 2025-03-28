@@ -41,7 +41,7 @@ const Layout = ({ user, setUser }) => {
 
 export const App = () => {
   // Update axios configuration
-  axios.defaults.baseURL = "http://localhost:3000"; // Updated baseURL
+  axios.defaults.baseURL = "https://travel-dairy.onrender.com"; // Updated baseURL
   axios.defaults.timeout = 10000; // Increased timeout to 10 seconds
   axios.defaults.headers.common['Content-Type'] = 'application/json';
 
