@@ -41,7 +41,7 @@ export const Profile = ({ user, setActiveRoute }) => {
             travelHistory.map((trip) => (
               <div key={trip._id} className="travel-card1">
                 <div className="image-container1">
-                  <img src={trip.photos ? `http://localhost:3000/${trip.photos}` : "https://via.placeholder.com/150"} alt={trip.destination} />
+                  <img src={trip.photos ? `https://travel-dairy.onrender.com/${trip.photos}` : "https://via.placeholder.com/150"} alt={trip.destination} />
                 </div>
                 <div className="travel-details1">
                   <h3>{trip.destination}</h3>
