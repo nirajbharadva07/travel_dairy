@@ -42,7 +42,7 @@ const Layout = ({ user, setUser }) => {
 export const App = () => {
   // Update axios configuration
   axios.defaults.baseURL = "https://travel-dairy.onrender.com"; // Updated baseURL
-  axios.defaults.timeout = 10000; // Increased timeout to 10 seconds
+  axios.defaults.timeout = 30000; // Increased timeout to 10 seconds
   axios.defaults.headers.common['Content-Type'] = 'application/json';
 
   // Add axios interceptor for error handling
